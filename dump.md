@@ -1,4 +1,4 @@
-#----------------------DEBUT------------------------------
+# ----------------------DEBUT------------------------------
 active-writeup-w-o-metasploit.md
 # Active Writeup w/o Metasploit
 
@@ -282,8 +282,8 @@ Therefore, I counted three vulnerabilities that allowed us to get admin level ac
 2. The use of vulnerable GPP. In 2014, Microsoft released a security bulletin for [MS14–025](https://support.microsoft.com/en-us/help/2962486/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevati) mentioning that Group Policy Preferences will no longer allow user names and passwords to be saved. However, if you’re using previous versions, this functionality can still be used. Similarly, you might have updated your system but accidentally left sensitive preference files that contain credentials.
 3. The use of weak credentials for the administrator account. Even if we did get a valid TGS ticket, we would not have been able to escalate privileges if the administrator had used a long random password that would have taken us an unrealistic amount of computing power and time to crack.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 arctic-writeup-w-o-metasploit.md
 # Arctic Writeup w/o Metasploit
 
@@ -554,8 +554,8 @@ The second thing worth mentioning is the way the application handled passwords. 
 
 Hashing passwords is a common approach to storing passwords securely. If an application gets hacked, the attacker should have to go through the trouble of cracking the hashed passwords before getting access to any user credentials. However, if hashing is being done on the client side as apposed to the server side, that would be equivalent to storing passwords in plaintext! As an attacker, I can bypass client side controls and use your hash to authenticate to your account. Therefore, in this case, if I get access to the password file I don’t need to run a password cracker. Instead, I can simply pass the hash.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 bastard-writeup-w-o-metasploit.md
 # Bastard Writeup w/o Metasploit
 
@@ -864,8 +864,8 @@ Grab the _root.txt_ flag.
 
 What allowed me to gain initial access to the machine and escalate privileges, is exploiting known vulnerabilities that had patches available. So it goes without saying, you should always update your software!
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 blue-writeup-w-o-metasploit.md
 # Blue Writeup w/o Metasploit
 
@@ -1007,8 +1007,8 @@ Grab the root flag.
 
 I keep repeating this in most of my HTB writeup blogs and I’ll say it again, it goes without saying that you should always update your systems **especially** when updates are released for critical vulnerabilities! If the system administrator had installed the MS17–010 security update, I would have had to find another way to exploit this machine.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 bounty-writeup-w-o-metasploit.md
 # Bounty Writeup w/o Metasploit
 
@@ -1442,8 +1442,8 @@ To gain an initial foothold on the box we exploited one vulnerability.
 
 To escalate privileges we didn’t necessarily exploit a vulnerability but an intended design of how Microsoft handles tokens. So there’s really not much to do there but put extra protections in place for these sensitive accounts. That’s not to say that this box was not vulnerable to a bunch of kernel exploits. We saw that it is a Windows 2008 OS that has no patches installed. So if we didn’t escalate privileges using Juicy Potato, we could have easily done so using the many kernel exploits that this box is vulnerable to.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 chatterbox-writeup-w-o-metasploit.md
 # Chatterbox Writeup w/o Metasploit
 
@@ -1853,8 +1853,8 @@ To escalate privileges we exploited three vulnerabilities.
 2. Automatic logon credentials saved in plaintext. Again, I’m not too familiar with the Windows system, but it seems like there is an option to store [automatic logon credentials in encrypted form](https://docs.microsoft.com/en-us/windows/win32/secauthn/protecting-the-automatic-logon-password). This way, as a non-privileged user we wouldn’t have been able to access these credentials.
 3. Reuse of credentials. The administrator had setup his password to be the same as the password used for automatic logon. Since these credentials are saved in cleartext in the registry, we were able to view them and start up a PowerShell process that sent a privileged reverse shell back to our attack machine in the context of the Administrator user. It goes without saying that you should definitely not reuse credentials, especially when setting up a non-privileged account where the credentials will be stored in plaintext.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 conceal-writeup-w-o-metasploit.md
 # Conceal Writeup w/o Metasploit
 
@@ -2384,8 +2384,8 @@ To gain an initial foothold on the box we exploited three vulnerabilities.
 
 To escalate privileges we didn’t necessarily exploit a vulnerability but an intended design of how Microsoft handles tokens. So there’s really not much to do there but put extra protections in place for these sensitive accounts.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 devel-writeup-w-o-metasploit.md
 # Devel Writeup w/o Metasploit
 
@@ -2624,8 +2624,8 @@ The user should have done two things to avoid this vulnerability:
 
 The second vulnerability was a Windows kernel vulnerability that allowed us to elevate privileges. The user should have updated and patched his system when the vulnerability was publicly disclosed and a security update was made available.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 forest-writeup-w-o-metasploit.md
 # Forest Writeup w/o Metasploit
 
@@ -3207,8 +3207,8 @@ To escalate privileges we exploited one vulnerability.
 
 1. Misconfigured AD domain object permissions. After gaining an initial foothold on the box, we discovered \(using bloodhound\) that our user is a member of two groups. However, these groups were members of other groups, and those groups were members of other groups and so on \(known as nested groups\). Therefore, our user inherited the rights of the parent and grandparent groups. This allowed a low privileged user not only to create users on the domain but also allowed the user to give these users DCSync privileges. These privileges allow an attacker to simulate the behaviour of the Domain Controller \(DC\) and retrieve password hashes via domain replication. This gave us the administrator hash, which we used in a pass the hash attack to gain access to the administrator’s account. Least privilege policy should be applied when configuring permissions.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 grandpa-writeup-w-metasploit.md
 # Grandpa Writeup w/ Metasploit
 
@@ -3453,8 +3453,8 @@ We’re SYSTEM! Grab the _user.txt_ and _root.txt_ flags.
 
 We gained initial access to the machine and escalated privileges by exploiting known vulnerabilities that had patches available. So it goes without saying, you should always update your software!
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 granny-writeup-w-o-and-w-metasploit.md
 # Granny Writeup w/o and w/ Metasploit
 
@@ -3832,8 +3832,8 @@ To escalate privileges we exploited one vulnerability.
 
 1. Kernel vulnerability in the outdated operating system that was being used. This could have been avoided if the OS was patched.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 jerry-writeup-w-o-metasploit.md
 # Jerry Writeup w/o Metasploit
 
@@ -4029,8 +4029,8 @@ To get SYSTEM on this box, we exploited two vulnerabilities.
 * Use of Default Credentials. There was an exposed port that was running Apache Tomcat. The administrator had used default credentials for the manager interface. This allowed us to access the interface and deploy a war file that gave us access to the server. Since default credentials are publicly available and can be easily obtained, the administrator should have instead used a sufficiently long password that is difficult to crack.
 * Least Privilege Violation. Tomcat doesn’t need SYSTEM privileges to function properly. Instead it should have been run under a tomcat user account that has limited privileges. This way, even if we did get access to the box, we would have needed to find a way to escalate privileges, instead of immediately getting SYSTEM access without having to work for it. The administrator should have conformed to the principle of least privilege.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 legacy-writeup-w-o-metasploit.md
 # Legacy Writeup w/o Metasploit
 
@@ -4182,8 +4182,8 @@ Grab the root flag.
 
 This was a relatively simple machine to solve. It was running a vulnerable outdated version of SMB. So far, I’ve solved four machine and each one of them required me to exploit a vulnerable version of some software to either gain a foothold on the machine or to escalate privileges. So it goes without saying that you should always update your systems **especially** when updates are released for critical vulnerabilities! If the user had installed the MS17–010 security update, I would have had to find another way to exploit this machine.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 optimum-writeup-w-o-metasploit.md
 # Optimum Writeup w/o Metasploit
 
@@ -4389,8 +4389,8 @@ We have system! Grab the root flag.
 
 Always update and patch your software! To gain both an initial foothold and escalate privileges, we leveraged publicly disclosed vulnerabilities that have security updates and patches available.
 
-#-------------------------------FIN-------------------------------------
-#----------------------DEBUT------------------------------
+# -------------------------------FIN-------------------------------------
+# ----------------------DEBUT------------------------------
 silo-writeup-w-o-metasploit.md
 # Silo Writeup w/o Metasploit
 
@@ -4781,4 +4781,4 @@ To get SYSTEM on this box, we exploited two vulnerabilities.
 1. Use of Default Credentials. There was an exposed port that was running Oracle TNS listener. The administrator had used default credentials for a user that had sysdba \(privileged\) access. This allowed us to login as that user and execute malicious code on the box. Since default credentials are publicly available and can be easily obtained, the administrator should have instead used a sufficiently long password that is difficult to crack.
 2. Least Privilege Violation. Oracle doesn’t need SYSTEM privileges to function properly. Instead it should have been run under a normal user account that has limited privileges. This way, even if we did get access to the box, we would have needed to find a way to escalate privileges, instead of immediately getting SYSTEM access without having to work for it. The administrator should have conformed to the principle of least privilege.
 
-#-------------------------------FIN-------------------------------------
+# -------------------------------FIN-------------------------------------
